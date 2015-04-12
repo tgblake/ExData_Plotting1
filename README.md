@@ -1,3 +1,27 @@
+Code and plot results for Coursera Exploratory Data Analysis course Project 1:
+
+plot1.R
+plot1.png
+plot2.R
+plot2.png
+plot3.R
+plot3.png
+plot4.R
+plot4.png
+
+Column names:
+
+Date     
+Time 
+Global_active_power 
+Global_reactive_power
+Voltage 
+Global_intensity 
+Sub_metering_1 
+Sub_metering_2 
+Sub_metering_3
+
+
 ## Introduction
 
 This assignment uses data from
