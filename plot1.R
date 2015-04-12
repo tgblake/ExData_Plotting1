@@ -1,7 +1,6 @@
 plot1 <- function() {
-      housePwr <- read.table("household_power_consumption.txt",header=TRUE,sep=";",
+      housePwr <- read.table("../household_power_consumption.txt",header=TRUE,sep=";",
                              na.strings="?") #, rows=readrows,
-      #housePwr <- housePwr[grepl("2007", housePwr[,"Date"]),]
       day1or2 <- grepl("^1.2.2007|^2.2.2007", housePwr[,"Date"])
       housePwr2days <- housePwr[day1or2,]
       
@@ -15,7 +14,7 @@ plot1 <- function() {
       housePwr2days$Date <- strptime(housePwr2days$Date, "%d/%m/%Y %T")
       
       library(datasets)
-      hist(housePwrDay1or2$Global_active_power, col="red", 
+      hist(housePwr2days$Global_active_power, col="red", 
            main="Global Active Power", ylim=c(0, 1200), 
            xlab="Global Active Power (kilowatts)", yaxp=c(0,1200,5))
       dev.copy(png, "plot1.png", width=480, height=480)

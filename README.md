@@ -21,6 +21,10 @@ Sub_metering_1
 Sub_metering_2 
 Sub_metering_3
 
+Note that the data file has been downloaded and unzipped, and the result 
+"household_power_consumption.txt" is placed in the parent directory of the
+git repo directory, to avoid pushing it along with the plot1-4.R and 
+plot1-4.png files.
 
 ## Introduction
 

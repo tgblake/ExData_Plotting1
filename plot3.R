@@ -1,5 +1,5 @@
 plot3 <- function() {
-      housePwr <- read.table("household_power_consumption.txt",header=TRUE,sep=";",
+      housePwr <- read.table("../household_power_consumption.txt",header=TRUE,sep=";",
                              na.strings="?") #, rows=readrows,
       day1or2 <- grepl("^1.2.2007|^2.2.2007", housePwr[,"Date"])
       housePwr2days <- housePwr[day1or2,]

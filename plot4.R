@@ -1,9 +1,9 @@
 plot4 <- function() {
-      housePwr <- read.table("household_power_consumption.txt",header=TRUE,sep=";",
+      housePwr <- read.table("../household_power_consumption.txt",header=TRUE,sep=";",
                              na.strings="?") #, rows=readrows,
-      housePwr07 <- housePwr[grepl("2007", housePwr[,"Date"]),]
-      day1or2 <- grepl("^1.2.2007|^2.2.2007", housePwr07[,"Date"])
-      housePwr2days <- housePwr07[day1or2,]
+      #housePwr07 <- housePwr[grepl("2007", housePwr[,"Date"]),]
+      day1or2 <- grepl("^1.2.2007|^2.2.2007", housePwr[,"Date"])
+      housePwr2days <- housePwr[day1or2,]
       
       #write.table(housePwrDay1or2, "housePwr2days.txt", sep=";")
       #housePwr2days <- read.table("housePwr2days.txt",header=TRUE, sep=";",
