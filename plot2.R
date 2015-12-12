@@ -1,4 +1,8 @@
 plot2 <- function() {
+      fileURL <- "https://d396qusza40orc.cloudfront.net/exdata%2Fdata%2Fhousehold_power_consumption.zip"
+      download.file(fileURL, destfile="../household_power_consumption.zip", method="curl")
+      unzip("../household_power_consumption.zip", overwrite=TRUE, exdir="..")
+      
       housePwr <- read.table("../household_power_consumption.txt",header=TRUE,sep=";",
                              na.strings="?") #, rows=readrows,
       housePwr07 <- housePwr[grepl("2007", housePwr[,"Date"]),]

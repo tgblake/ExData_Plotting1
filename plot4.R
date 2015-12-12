@@ -1,4 +1,8 @@
 plot4 <- function() {
+      fileURL <- "https://d396qusza40orc.cloudfront.net/exdata%2Fdata%2Fhousehold_power_consumption.zip"
+      download.file(fileURL, destfile="../household_power_consumption.zip", method="curl")
+      unzip("../household_power_consumption.zip", overwrite=TRUE, exdir="..")
+      
       housePwr <- read.table("../household_power_consumption.txt",header=TRUE,sep=";",
                              na.strings="?") #, rows=readrows,
       #housePwr07 <- housePwr[grepl("2007", housePwr[,"Date"]),]
@@ -39,7 +43,7 @@ plot4 <- function() {
       dev.copy(png, "plot4.png", width=480, height=480)
       dev.off()
       
-      print("tail(housePwr2days):")
-      print(tail(housePwr2days[,1:4]))
+      #print("tail(housePwr2days):")
+      #print(tail(housePwr2days[,1:4]))
       
 }
