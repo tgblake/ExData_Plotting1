@@ -3,15 +3,10 @@ plot2 <- function() {
       download.file(fileURL, destfile="../household_power_consumption.zip", method="curl")
       unzip("../household_power_consumption.zip", overwrite=TRUE, exdir="..")
       
-      housePwr <- read.table("../household_power_consumption.txt",header=TRUE,sep=";",
-                             na.strings="?") #, rows=readrows,
-      housePwr07 <- housePwr[grepl("2007", housePwr[,"Date"]),]
-      day1or2 <- grepl("^1.2.2007|^2.2.2007", housePwr07[,"Date"])
-      housePwr2days <- housePwr07[day1or2,]
-
-#      write.table(housePwrDay1or2, "housePwr2days.txt", sep=";")
-#      housePwr2days <- read.table("housePwr2days.txt",header=TRUE, sep=";",
-#                                  stringsAsFactors=FALSE)
+      system("head -n1 ../household_power_consumption.txt > housePwr2days.txt")
+      system("grep '^1.2.2007|^2.2.2007' ../household_power_consumption.txt >> housePwr2days.txt")
+      housePwr2days <- read.table("../housePwr2days.txt",header=TRUE,sep=";",
+                                  na.strings="?")
       
       # Combine date and time (from Course Project forum):
       housePwr2days$Date <- paste(housePwr2days$Date, housePwr2days$Time, sep=" ")
